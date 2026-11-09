@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Internship Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#results">Skip to results</a>
+
+  <header class="site-header">
+    <h1>Internship Board</h1>
+    <p>Search and filter internships by domain.</p>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Search and filters">
+      <form id="filter-form" role="search" onsubmit="return false">
+        <div class="field">
+          <label for="search">Search by title, skill or location</label>
+          <input type="search" id="search" name="search" placeholder="e.g. Frontend, SQL, Pune" autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <label for="domain">Domain</label>
+          <select id="domain" name="domain">
+            <option value="all">All domains</option>
+          </select>
+        </div>
+
+        <button type="button" id="reset" class="btn-secondary">Reset filters</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading" class="visually-hidden">Internship results</h2>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <ul id="results" class="grid"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built with plain HTML, CSS and JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

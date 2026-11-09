@@ -1,0 +1,140 @@
+:root {
+  --bg: #f6f8fc;
+  --card: #ffffff;
+  --text: #14213d;
+  --muted: #5b6475;
+  --primary: #2354d6;
+  --border: #d9e0ee;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: 8px; top: -50px;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 10;
+}
+.skip-link:focus { top: 8px; }
+
+.site-header, main, .site-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.site-header h1 { margin-bottom: 4px; }
+.site-header p { margin-top: 0; color: var(--muted); }
+
+.controls form {
+  display: grid;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+label { font-weight: 600; font-size: 0.9rem; }
+
+input, select, button {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+}
+
+button.btn-secondary {
+  cursor: pointer;
+  background: #eef3ff;
+  border-color: #c5d3f7;
+  color: var(--primary);
+  font-weight: 600;
+}
+button.btn-secondary:hover { background: #e2eaff; }
+
+:focus-visible {
+  outline: 3px solid #ffb703;
+  outline-offset: 2px;
+}
+
+.status { margin: 16px 0 8px; color: var(--muted); }
+.status.error { color: #b3261e; font-weight: 600; }
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card h3 { margin: 0; font-size: 1.1rem; }
+.card .company { margin: 0; color: var(--muted); }
+.card .desc { margin: 0; font-size: 0.95rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.tag {
+  background: #efe9ff;
+  color: #4b2a9b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.site-footer { color: var(--muted); font-size: 0.9rem; }
+
+/* Tablet and up: search + filter side by side */
+@media (min-width: 640px) {
+  .controls form {
+    grid-template-columns: 2fr 1fr auto;
+    align-items: end;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .site-header h1 { font-size: 2.4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* Card details for the real internship data */
+.card .meta { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.card .openings { margin: 0; font-weight: 600; color: var(--primary); }
